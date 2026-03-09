@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Tours</title>
+
+<style>
+.buy-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 22px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ff7675, #d63031);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.buy-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+}
+
+/* HEADER */
+header{
+    background:#0a3d62;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+header nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+    url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h2{
+    font-size:45px;
+}
+
+/* TOURS GRID */
+.tours-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+    padding:50px 20px;
+}
+
+.tour-card{
+    background:white;
+    width:320px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.tour-card:hover{
+    transform:translateY(-8px);
+}
+
+.tour-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.tour-content{
+    padding:20px;
+}
+
+.tour-content h3{
+    margin-top:0;
+}
+
+.price{
+    font-weight:bold;
+    color:#0a3d62;
+    margin:10px 0;
+}
+
+.duration{
+    font-size:14px;
+    color:#555;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    background:linear-gradient(45deg,#0a3d62,#1e5f8a);
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:linear-gradient(45deg,#1e5f8a,#0a3d62);
+}
+
+/* FOOTER */
+footer{
+    background:#0a3d62;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Kenshabi Travel Agency</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="tours.html">Tours</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Explore Our South Pacific Tours</h2>
+    <p>Adventure, Nature and Relaxation from Pérez Zeledón</p>
+</section>
+
+<section class="tours-container">
+
+<!-- TOUR 1 -->
+<div class="tour-card">
+<img src="golfo-dulce.jpg">
+<div class="tour-content">
+<h3>Essence of the Gulf</h3>
+<p>Relax and enjoy nature at Golfo Dulce. Swim, walk on the beach and rest surrounded by jungle.</p>
+<div class="duration">Duration: 13 hours</div>
+<div class="price">$75 per person</div>
+<button class="btn" onclick="openModal('modal1')">View Itinerary</button>
+<a href="payment.html" class="buy-btn">Buy Now</a>
+</div>
+</div>
+
+<!-- TOUR 2 -->
+<div class="tour-card">
+<img src="baru.jpg">
+<div class="tour-content">
+<h3>Trails of Life – Hacienda Barú</h3>
+<p>Nature tour with fresh air, trees and wildlife. Perfect to walk and relax.</p>
+<div class="duration">Duration: 11 hours</div>
+<div class="price">$65 per person</div>
+<button class="btn" onclick="openModal('modal2')">View Itinerary</button>
+<a href="payment.html" class="buy-btn">Buy Now</a>
+</div>
+</div>
+
+<!-- TOUR 3 -->
+<div class="tour-card">
+<img src="piedras-blancas.jpg">
+<div class="tour-content">
+<h3>Pure Jungle – Piedras Blancas</h3>
+<p>Strong nature experience in Piedras Blancas National Park. Jungle trails and wildlife.</p>
+<div class="duration">Duration: 14 hours</div>
+<div class="price">$79 per person</div>
+<button class="btn" onclick="openModal('modal3')">View Itinerary</button>
+<a href="payment.html" class="buy-btn">Buy Now</a>
+</div>
+</div>
+
+<!-- TOUR 4 -->
+<div class="tour-card">
+<img src="nauyaca2.jpg">
+<div class="tour-content">
+<h3>Nauyaca Waterfalls</h3>
+<p>Enjoy one of the most beautiful waterfalls in Costa Rica. Swim and relax in nature.</p>
+<div class="duration">Duration: 10 hours</div>
+<div class="price">$60 per person</div>
+<button class="btn" onclick="openModal('modal4')">View Itinerary</button>
+<a href="payment.html" class="buy-btn">Buy Now</a>
+</div>
+</div>
+
+<!-- TOUR 5 -->
+<div class="tour-card">
+<img src="poas-volcano.jpg">
+<div class="tour-content">
+<h3>Poás Volcano & Strawberry Tour</h3>
+<p>Visit Poás Volcano and enjoy a guided strawberry farm tour with tasting.</p>
+<div class="duration">Duration: 11 hours</div>
+<div class="price">$80 per person</div>
+<button class="btn" onclick="openModal('modal5')">View Itinerary</button>
+<a href="payment.html" class="buy-btn">Buy Now</a>
+</div>
+</div>
+
+<!-- TOUR 6 -->
+<div class="tour-card">
+<img src="marina.jpg">
+<div class="tour-content">
+<h3>Playa Biesanz & Marina Pez Vela</h3>
+<p>Sunny beach day and coastal atmosphere. Relax and explore the marina.</p>
+<div class="duration">Duration: 9 hours</div>
+<div class="price">$64 per person</div>
+<button class="btn" onclick="openModal('modal6')">View Itinerary</button>
+<a href="payment.html" class="buy-btn">Buy Now</a>
+</div>
+</div>
+
+</section>
+
+<footer>
+© 2026 Kenshabi Travel Agency | Pérez Zeledón
+</footer>
+
+</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Tours</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .tour-card {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 10px;
+      max-width: 500px;
+    }
+
+    .tour-card button {
+      padding: 10px 15px;
+      cursor: pointer;
+      border: none;
+      background-color: #0077cc;
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px; right: 20px;
+      font-size: 30px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+    }
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: white;
+  margin: 10% auto;
+  padding: 30px;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 15px;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+  </style>
+</head>
+<body>
+
+<body>
+<!-- Modal -->
+<div id="tour-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="modal-close">&times;</span>
+    <h2 id="modal-title"></h2>
+    <p id="modal-overview"></p>
+    <p><strong>Duration:</strong> <span id="modal-duration"></span></p>
+    <p><strong>Not Included:</strong></p>
+    <ul id="modal-not-included"></ul>
+    <p><strong>Price:</strong> <span id="modal-price"></span></p>
+    <p><strong>Itinerary:</strong></p>
+    <ul id="modal-itinerary"></ul>
+  </div>
+</div>
+  
+
+  <!-- JavaScript aquí -->
+  <script>
+    // Tu código JS del modal va aquí
+  </script>
+
+</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pérez Zeledón Beach Tour</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+<!-- Modal -->
+<div id="tour-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="modal-close">&times;</span>
+    <h2 id="modal-title"></h2>
+    <p id="modal-overview"></p>
+    <p><strong>Duration:</strong> <span id="modal-duration"></span></p>
+    <p><strong>Not Included:</strong></p>
+    <ul id="modal-not-included"></ul>
+    <p><strong>Price:</strong> <span id="modal-price"></span></p>
+    <p><strong>Itinerary:</strong></p>
+    <ul id="modal-itinerary"></ul>
+  </div>
+</div>
+
+    .tour-card {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 10px;
+      max-width: 500px;
+    }
+
+    .tour-card button {
+      padding: 10px 15px;
+      cursor: pointer;
+      border: none;
+      background-color: #0077cc;
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px; right: 20px;
+      font-size: 30px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<!-- MODAL 1 -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal1')">&times;</span>
+    <h2>Essence of the Gulf</h2>
+    <p><strong>Destination:</strong> Golfo Dulce</p>
+<p><strong>Overview:</strong>This tour is to relax and enjoy nature. It is a hot and quiet place. You can swim, walk on the beach, and rest surrounded by jungle.</p>    
+<p><strong>Departure:</strong> Pérez Zeledón Central Park – 5:30 a.m.</p>
+    <p><strong>Activities:</strong> Beach time, short walk, photos, rest, free lunch time.</p>
+    <p><strong>Return:</strong> 5:30 p.m.</p>
+    <p><strong>Not Included:</strong> Lunch, personal expenses, extra water activities.</p>
+  </div>
+</div>
+
+<script>
+function openModal(id) {
+  document.getElementById(id).style.display = "block";
+}
+
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target.classList.contains('modal')) {
+    event.target.style.display = "none";
+  }
+}
+</script>
+
+<!-- MODAL 2 -->
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal2')">&times;</span>
+    
+    <h2>Trails of Life – Hacienda Barú</h2>
+    
+    <p><strong>Destination:</strong> Hacienda Barú</p>
+    
+    <p><strong>Overview:</strong><br>
+    This is a nature tour in a hot place. There are many trees, fresh air, and animals. It is perfect to walk and relax.
+    </p>
+
+    <p><strong>Duration:</strong> Full day (11 hours)</p>
+    <p><strong>Price:</strong> $65 per person</p>
+
+    <p><strong>Departure:</strong> Pérez Zeledón Central Park</p>
+    <p><strong>Time:</strong> 6:00 a.m.</p>
+
+    <p><strong>Activities:</strong></p>
+    <ul>
+      <li>Walk on nature trails</li>
+      <li>See plants and animals</li>
+      <li>Time to rest</li>
+      <li>Take pictures</li>
+    </ul>
+
+    <p><strong>Return:</strong> 5:30 p.m.</p>
+
+    <p><strong>Not Included:</strong></p>
+    <ul>
+      <li>Lunch</li>
+      <li>Entrance fee</li>
+      <li>Snacks and drinks</li>
+    </ul>
+
+  </div>
+</div>
+
+<!-- MODAL 3 -->
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal3')">&times;</span>
+    
+    <h2> Wild Adventure – Piedras Blancas National Park</h2>
+    
+    <p><strong>Destination:</strong> Piedras Blancas National Park</p>
+    
+    <p><strong>Overview:</strong><br>
+    This tour is for people who love strong nature and clean air. It is a hot place with jungle and trails.
+    </p>
+
+    <p><strong>Duration:</strong> Full day (about 14 hours)</p>
+    <p><strong>Price:</strong> $79 per person</p>
+
+    <p><strong>Departure:</strong> Pérez Zeledón Central Park</p>
+    <p><strong>Time:</strong> 5:00 a.m.</p>
+
+    <p><strong>Activities:</strong></p>
+    <ul>
+      <li>Walk in the jungle</li>
+      <li>See animals</li>
+      <li>Rest</li>
+      <li>Take photos</li>
+    </ul>
+
+    <p><strong>Return:</strong> 7:00 p.m.</p>
+
+    <p><strong>Not Included:</strong></p>
+    <ul>
+      <li>Lunch</li>
+      <li>Park entrance</li>
+      <li>Extra guide</li>
+    </ul>
+
+  </div>
+</div>
+
+<!-- MODAL 4 -->
+<div id="modal4" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal4')">&times;</span>
+    
+    <h2>Natural Escape – Nauyaca Waterfalls</h2>
+    
+    <p><strong>Destination:</strong> Nauyaca Waterfalls</p>
+    
+    <p><strong>Overview:</strong><br>
+    Enjoy a day surrounded by nature at the impressive Nauyaca Waterfalls, one of the most beautiful destinations in Costa Rica’s South Pacific. Ideal for swimming, relaxing, and taking photos.
+    </p>
+
+    <p><strong>Duration:</strong> Full day (10 hours)</p>
+    <p><strong>Tour Price:</strong> $60 per person</p>
+
+    <p><strong>Includes:</strong></p>
+    <ul>
+      <li>Round-trip transportation from Pérez Zeledón Central Park</li>
+      <li>Tour guide</li>
+      <li>Entrance to the waterfalls</li>
+      <li>Free time to swim</li>
+    </ul>
+
+    <p><strong>Does not include:</strong></p>
+    <ul>
+      <li>Lunch</li>
+      <li>Personal expenses</li>
+    </ul>
+
+    <p><strong>Itinerary:</strong></p>
+    <ul>
+      <li>Departure from Pérez Zeledón Central Park at 7:30 a.m.</li>
+      <li>Hike to the waterfalls</li>
+      <li>Free time to enjoy and swim</li>
+      <li>Return at 5:30 p.m.</li>
+    </ul>
+
+  </div>
+</div>
+
+<!-- MODAL 5 -->
+<div id="modal5" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal5')">&times;</span>
+    
+    <h2> Volcano and Strawberry Experience</h2>
+    
+    <p><strong>Destination:</strong> Volcano and Strawberry Tour</p>
+    
+    <p><strong>Overview:</strong><br>
+    Enjoy a natural and cultural experience visiting Poás Volcano and a strawberry farm, where you will learn about the growing process and taste fresh, artisanal products. This tour is ideal for the whole family.
+    </p>
+
+    <p><strong>Duration:</strong> Full day (11 hours)</p>
+    <p><strong>Tour Price:</strong> $80 per person</p>
+
+    <p><strong>Includes:</strong></p>
+    <ul>
+      <li>Round-trip transportation from Pérez Zeledón Central Park</li>
+      <li>Tour guide</li>
+      <li>Entrance to Poás Volcano National Park</li>
+      <li>Guided strawberry farm tour</li>
+      <li>Strawberry and natural product tasting</li>
+    </ul>
+
+    <p><strong>Does not include:</strong></p>
+    <ul>
+      <li>Lunch</li>
+      <li>Personal expenses</li>
+    </ul>
+
+    <p><strong>Itinerary:</strong></p>
+    <ul>
+      <li>Departure from Pérez Zeledón Central Park at 4:00 a.m.</li>
+      <li>Visit to Poás Volcano</li>
+      <li>Transfer to the strawberry farm</li>
+      <li>Tasting and free time</li>
+      <li>Return at 3:30 p.m.</li>
+    </ul>
+
+  </div>
+</div>
+
+<!-- MODAL 6 -->
+<div id="modal6" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal6')">&times;</span>
+    
+    <h2> Beach & Marina Escape</h2>
+    
+    <p><strong>Destination:</strong> Playa Biesanz and Marina Pez Vela</p>
+    
+    <p><strong>Overview:</strong><br>
+    Enjoy a sunny beach day and coastal atmosphere visiting Playa Biesanz, a calm beach perfect for swimming and relaxing, and Marina Pez Vela, one of the most modern marinas in Costa Rica.
+    </p>
+
+    <p><strong>Duration:</strong> Full day (9 hours)</p>
+    <p><strong>Tour Price:</strong> $64 per person</p>
+
+    <p><strong>Includes:</strong></p>
+    <ul>
+      <li>Round-trip transportation from Pérez Zeledón Central Park</li>
+      <li>Tour guide</li>
+      <li>Free time at Playa Biesanz</li>
+      <li>Visit to Marina Pez Vela</li>
+    </ul>
+
+    <p><strong>Does not include:</strong></p>
+    <ul>
+      <li>Lunch</li>
+      <li>Personal expenses</li>
+      <li>Water activities</li>
+    </ul>
+
+    <p><strong>Itinerary:</strong></p>
+    <ul>
+      <li>Departure from Pérez Zeledón Central Park at 6:00 a.m.</li>
+      <li>Visit and free time at Playa Biesanz</li>
+      <li>Walk around Marina Pez Vela</li>
+      <li>Return at 6:30 p.m.</li>
+    </ul>
+
+  </div>
+</div>
+</body>
+
+</html>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tour Payment</title>
+  <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('cola ballena.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.payment-container {
+  max-width: 500px;
+  margin: 80px auto;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  animation: fadeIn 0.8s ease;
+}
+
+.payment-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #00b894;
+}
+
+.payment-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-container input,
+.payment-container select {
+  padding: 12px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.payment-container input:focus,
+.payment-container select:focus {
+  border-color: #00b894;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0,184,148,0.4);
+}
+
+.book-btn {
+  background: linear-gradient(135deg, #00b894, #00cec9);
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.book-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.payment-container {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.payment-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.payment-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-container input,
+.payment-container select {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.success-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.success-content {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 400px;
+  animation: fadeIn 0.4s ease;
+}
+
+.success-content h2 {
+  color: #00b894;
+  margin-bottom: 15px;
+}
+
+.success-content button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background: #00b894;
+  color: white;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+  <div class="payment-container">
+    <h1>Complete Your Booking</h1>
+
+    <form onsubmit="showSuccess(event)">
+      <label>Full Name:</label>
+      <input type="text" required>
+
+      <label>Email:</label>
+      <input type="email" required>
+
+      <label>Phone Number:</label>
+      <input type="tel" required>
+
+      <label>Select Tour:</label>
+      <select>
+<option>Golfo Dulce</option>
+        <option>Hacienda Barú</option>
+        <option>Piedras Blancas National Park</option>
+        <option>Nauyaca Waterfalls</option>
+        <option>Volcano and Strawberry Tour</option>
+        <option>Playa Biesanz & Marina Pez Vela</option>
+      </select>
+
+      <label>Payment Method:</label>
+      <select>
+        <option>Credit Card</option>
+        <option>Debit Card</option>
+        <option>Bank Transfer</option>
+      </select>
+<label>Card Number:</label>
+<input type="text" placeholder="1234 5678 9012 3456" maxlength="19">
+
+<label>Card Holder Name:</label>
+<input type="text" placeholder="Full name">
+
+<div style="display:flex; gap:10px;">
+  <div style="flex:1;">
+    <label>Expiry Date:</label>
+    <input type="text" placeholder="MM/YY" maxlength="5">
+  </div>
+
+  <div style="flex:1;">
+    <label>CVV:</label>
+    <input type="text" placeholder="123" maxlength="3">
+  </div>
+</div>
+
+      <button type="submit" class="book-btn">Confirm Payment</button>
+    </form>
+  </div>
+
+<div id="successModal" class="success-modal">
+  <div class="success-content">
+    <h2>🎉 Payment Successful!</h2>
+    <p>Thank you for booking with Kenshabi Tours.</p>
+    <p>We will contact you soon with more details.</p>
+    <button onclick="closeSuccess()">Close</button>
+  </div>
+</div>
+
+<script>
+function showSuccess(event) {
+  event.preventDefault(); 
+  document.getElementById("successModal").style.display = "flex";
+}
+
+function closeSuccess() {
+  document.getElementById("successModal").style.display = "none";
+}
+</script>
+</body>
+</html>
